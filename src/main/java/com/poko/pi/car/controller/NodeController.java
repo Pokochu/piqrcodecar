@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/nodeService")
 public class NodeController {
@@ -22,36 +24,54 @@ public class NodeController {
     public ResponseEntity<String> uploadNode(@RequestBody Node node) {
         try {
             service.uploadNode(node);
-            return new ResponseEntity<String>(node.toString(), HttpStatus.OK);
+            return new ResponseEntity<>(node.toString(), HttpStatus.OK);
         } catch (Exception e) {
             LOGGER.error(" {}", e.getMessage());
-            return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 
-    @PostMapping(value = "/modifyNode")
-    public void modifyNode() {
-
+    @PostMapping(value = "/modifyNode", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<String> modifyNode(@RequestBody Node node) {
+        try {
+            service.uploadNode(node);
+            return new ResponseEntity<>(node.toString(), HttpStatus.OK);
+        } catch (Exception e) {
+            LOGGER.error(" {}", e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 
-    @DeleteMapping(value = "/deleteNode")
-    public void deleteNode() {
-
+    @DeleteMapping(value = "/deleteNode", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<String> deleteNode(@RequestBody Node node) {
+        try {
+            service.deleteNode(node);
+            return new ResponseEntity<>("Node deleted: " + node.getNodeName(), HttpStatus.OK);
+        } catch (Exception e) {
+            LOGGER.error(" {}", e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 
     @DeleteMapping(value = "/deleteAll")
     public ResponseEntity<String> deleteAll() {
         try {
             service.deleteAll();
-            return new ResponseEntity<String>("All nodes deleted", HttpStatus.OK);
+            return new ResponseEntity<>("All nodes deleted", HttpStatus.OK);
         } catch (Exception e) {
             LOGGER.error(" {}", e.getMessage());
-            return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 
-    @PostMapping(value = "/bulkUpload")
-    public void bulkUpload() {
-
+    @PostMapping(value = "/bulkUpload", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<String> bulkUpload(@RequestBody List<Node> nodes) {
+        try {
+            service.bulkUpload(nodes);
+            return new ResponseEntity<>("Number of nodes saved: " + nodes.size(), HttpStatus.OK);
+        } catch (Exception e) {
+            LOGGER.error(" {}", e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 }
