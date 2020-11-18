@@ -20,7 +20,7 @@ public class NodeController {
     @Autowired
     private NodeService service;
 
-    @PostMapping(path = "/uploadNode", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "/uploadNode", consumes = "application/json")
     public ResponseEntity<String> uploadNode(@RequestBody Node node) {
         try {
             service.uploadNode(node);
@@ -31,7 +31,7 @@ public class NodeController {
         }
     }
 
-    @PostMapping(value = "/modifyNode", consumes = "application/json", produces = "application/json")
+    @PostMapping(value = "/modifyNode", consumes = "application/json")
     public ResponseEntity<String> modifyNode(@RequestBody Node node) {
         try {
             service.uploadNode(node);
@@ -42,11 +42,11 @@ public class NodeController {
         }
     }
 
-    @DeleteMapping(value = "/deleteNode", consumes = "application/json", produces = "application/json")
+    @DeleteMapping(value = "/deleteNode", consumes = "application/json")
     public ResponseEntity<String> deleteNode(@RequestBody Node node) {
         try {
             service.deleteNode(node);
-            return new ResponseEntity<>("Node deleted: " + node.getNodeName(), HttpStatus.OK);
+            return new ResponseEntity<>("Node deleted: " + node.getId(), HttpStatus.OK);
         } catch (Exception e) {
             LOGGER.error(" {}", e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
@@ -64,7 +64,7 @@ public class NodeController {
         }
     }
 
-    @PostMapping(value = "/bulkUpload", consumes = "application/json", produces = "application/json")
+    @PostMapping(value = "/bulkUpload", consumes = "application/json")
     public ResponseEntity<String> bulkUpload(@RequestBody List<Node> nodes) {
         try {
             service.bulkUpload(nodes);

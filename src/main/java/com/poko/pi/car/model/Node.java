@@ -8,13 +8,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "NODES")
-public class Node {
+public class Node implements GraphNode {
 
     private double x;
     private double y;
     @Id
-    private String nodeName;
+    private String id;
     private boolean occupied;
+
+    public  Node() {}
+
+    public Node(double x, double y, String id, boolean occupied) {
+        this.x = x;
+        this.y = y;
+        this.id = id;
+        this.occupied = occupied;
+    }
 
     public double getX() {
         return x;
@@ -32,12 +41,13 @@ public class Node {
         this.y = y;
     }
 
-    public String getNodeName() {
-        return nodeName;
+    @Override
+    public String getId() {
+        return id;
     }
 
-    public void setNodeName(String nodeName) {
-        this.nodeName = nodeName;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public boolean isOccupied() {
