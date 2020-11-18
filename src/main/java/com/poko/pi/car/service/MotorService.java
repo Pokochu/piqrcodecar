@@ -23,11 +23,9 @@ public class MotorService {
     private final GpioPinDigitalOutput PIN24 = gpioController.provisionDigitalOutputPin(GPIO_05);
 
     public void forward(long duration) throws InterruptedException {
-        LOGGER.info("Moving forward in MotorService for {}", duration);
         gpioController.setState(LOW, PIN17, PIN24);
         gpioController.setState(HIGH, PIN22, PIN23);
         Thread.sleep(duration);
-        LOGGER.info("Forward moving ended!");
     }
 
     public void backward(long duration) throws InterruptedException {

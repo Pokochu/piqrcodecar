@@ -1,6 +1,8 @@
 package com.poko.pi.car.controller;
 
 import com.poko.pi.car.service.MotorService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/motorService")
 public class MotorController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(MotorController.class);
 
     @Autowired
     private MotorService service;
