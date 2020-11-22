@@ -13,4 +13,4 @@
 - [ ] Implement image service
 - [ ] Implement QR code reading
 - [ ] Implement movement based on QR codes
-- [ ] Pathfindig algorithm on graph
+- [x] Pathfindig algorithm on graph
