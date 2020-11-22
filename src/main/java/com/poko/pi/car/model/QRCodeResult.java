@@ -7,6 +7,9 @@ public class QRCodeResult {
     private double offsetY;
     private double offsetAngle;
 
+    public QRCodeResult() {
+    }
+
     public QRCodeResult(String nodeId, double offsetX, double offsetY, double offsetAngle) {
         this.nodeId = nodeId;
         this.offsetX = offsetX;
