@@ -21,6 +21,10 @@ public class NodeService {
         repository.save(node);
     }
 
+    public Iterable<Node> getAllNodes() {
+        return repository.findAll();
+    }
+
     public void deleteNode(Node node) {
         repository.delete(node);
     }

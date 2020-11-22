@@ -4,8 +4,6 @@ import com.poko.pi.car.model.Graph;
 import com.poko.pi.car.model.Node;
 import com.poko.pi.car.pathfinding.EuclideanScorer;
 import com.poko.pi.car.pathfinding.PathFinder;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
