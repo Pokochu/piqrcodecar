@@ -36,6 +36,7 @@ public class QRCodeDecoderService {
             LOGGER.info("MetaData: {}", decode.getResultMetadata().toString());
             LOGGER.info("ResultPoints: {}", Arrays.toString(decode.getResultPoints()));
         } catch (IOException | NotFoundException | ChecksumException | FormatException e) {
+            LOGGER.error("Error in something: {}", e.getMessage());
             e.printStackTrace();
         }
         return result;

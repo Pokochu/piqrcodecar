@@ -2,6 +2,8 @@ package com.poko.pi.car.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,7 +15,13 @@ public class Edge {
 
     @Id
     private String nodeId;
+
+    @Column
+    @ElementCollection(targetClass = String.class)
     private Set<String> connectedNodes;
+
+    public Edge() {
+    }
 
     public Edge(String nodeId, Set<String> connectedNodes) {
         this.nodeId = nodeId;

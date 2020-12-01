@@ -1,5 +1,7 @@
 package com.poko.pi.car.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 public class QRCodeResult {
 
     private String nodeId;
@@ -47,5 +49,10 @@ public class QRCodeResult {
 
     public void setOffsetAngle(double offsetAngle) {
         this.offsetAngle = offsetAngle;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 }
