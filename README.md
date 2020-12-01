@@ -9,8 +9,9 @@
 - [x] Implement basic movements
 - [ ] Measure basic movements
 - [ ] Define and implement accurate drive
-- [ ] Connect camera to RPi
-- [ ] Implement image service
-- [ ] Implement QR code reading
+- [x] Connect camera to RPi
+- [x] Implement image service
+- [x] Implement QR code reading
+- [ ] Implement process of decoded QR code data
 - [ ] Implement movement based on QR codes
 - [x] Pathfindig algorithm on graph
