@@ -10,4 +10,8 @@ public class EuclideanScorer implements Scorer<Node> {
         double coeffY = Math.pow(destination.getY() - start.getY(), 2);
         return Math.sqrt(coeffX + coeffY);
     }
+
+    public double getAngle(Node a, Node b) {
+        return Math.toDegrees(Math.atan2((b.getY() - a.getY()), (b.getX() - a.getX())));
+    }
 }

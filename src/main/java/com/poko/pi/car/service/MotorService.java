@@ -33,7 +33,7 @@ public class MotorService {
         pin22 = gpioController.provisionDigitalOutputPin(GPIO_03, "in2"); //PIN22
         pin23 = gpioController.provisionDigitalOutputPin(GPIO_04, "in3"); //PIN23
         pin24 = gpioController.provisionDigitalOutputPin(GPIO_05, "in4"); //PIN24
-        pin25.setPwmRange(1000);//400
+        pin25.setPwmRange(1000);
         pin26.setPwmRange(1000);
     }
 
@@ -69,7 +69,7 @@ public class MotorService {
         gpioController.setState(LOW, pin17, pin22, pin23, pin24);
     }
 
-    public void setPwm() {
+    private void setPwm() {
         pin25.setPwm(Math.toIntExact(500));
         pin26.setPwm(Math.toIntExact(500));
     }

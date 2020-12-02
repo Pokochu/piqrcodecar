@@ -19,12 +19,12 @@ public class CarController {
     private PiCarService service;
 
     @PostMapping("/driveFromTo")
-    public void driveBetweenNodes(@RequestParam String from, @RequestParam String to) {
+    public void driveBetweenNodes(@RequestParam String from, @RequestParam String to) throws InterruptedException {
         service.driveBetweenNodes(from, to);
     }
 
     @PostMapping("/driveToNode")
-    public void driveToNode(@RequestParam String destinationNode) {
+    public void driveToNode(@RequestParam String destinationNode) throws InterruptedException {
         service.driveToNode(destinationNode);
     }
 }

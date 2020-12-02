@@ -7,11 +7,12 @@
 - [x] Connect motor driver to RPi
 - [x] Create project and implement basic models
 - [x] Implement basic movements
-- [ ] Measure basic movements
-- [ ] Define and implement accurate drive
+- [x] Measure basic movements
+- [x] Define and implement accurate drive
 - [x] Connect camera to RPi
 - [x] Implement image service
 - [x] Implement QR code reading
-- [ ] Implement process of decoded QR code data
-- [ ] Implement movement based on QR codes
+- [x] Implement process of decoded QR code data
+- [x] Implement movement based on QR codes
 - [x] Pathfindig algorithm on graph
+- [ ] Basic refactoring
