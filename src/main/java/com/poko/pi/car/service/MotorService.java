@@ -37,32 +37,32 @@ public class MotorService {
         pin26.setPwmRange(1000);
     }
 
-    public void forward(long duration) throws InterruptedException {
+    public void forward(long distance) throws InterruptedException {
         gpioController.setState(LOW, pin17, pin24);
         gpioController.setState(HIGH, pin22, pin23);
         setPwm();
-        Thread.sleep(duration);
+        Thread.sleep(distance);
     }
 
-    public void backward(long duration) throws InterruptedException {
+    public void backward(long distance) throws InterruptedException {
         gpioController.setState(LOW, pin22, pin23);
         gpioController.setState(HIGH, pin17, pin24);
         setPwm();
-        Thread.sleep(duration);
+        Thread.sleep(distance);
     }
 
-    public void rotateRight(long duration) throws InterruptedException {
+    public void rotateRight(long distance) throws InterruptedException {
         gpioController.setState(LOW, pin17, pin23);
         gpioController.setState(HIGH, pin22, pin24);
         setPwm();
-        Thread.sleep(duration);
+        Thread.sleep(distance);
     }
 
-    public void rotateLeft(long duration) throws InterruptedException {
+    public void rotateLeft(long distance) throws InterruptedException {
         gpioController.setState(LOW, pin22, pin24);
         gpioController.setState(HIGH, pin17, pin23);
         setPwm();
-        Thread.sleep(duration);
+        Thread.sleep(distance);
     }
 
     public void stop() {

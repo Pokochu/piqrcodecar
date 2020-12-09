@@ -19,26 +19,26 @@ public class MotorController {
     private MotorService service;
 
     @PostMapping("/moveForward")
-    public void moveForward(@RequestParam long duration) throws InterruptedException {
-        service.forward(duration);
+    public void moveForward(@RequestParam long distance) throws InterruptedException {
+        service.forward(distance);
         service.stop();
     }
 
     @PostMapping("/moveBackward")
-    public void moveBackward(@RequestParam long duration) throws InterruptedException {
-        service.backward(duration);
+    public void moveBackward(@RequestParam long distance) throws InterruptedException {
+        service.backward(distance);
         service.stop();
     }
 
     @PostMapping("/rotateLeft")
-    public void rotateLeft(@RequestParam long duration) throws InterruptedException {
-        service.rotateLeft(duration);
+    public void rotateLeft(@RequestParam long distance) throws InterruptedException {
+        service.rotateLeft(distance);
         service.stop();
     }
 
     @PostMapping("/rotateRight")
-    public void rotateRight(@RequestParam long duration) throws InterruptedException {
-        service.rotateRight(duration);
+    public void rotateRight(@RequestParam long distance) throws InterruptedException {
+        service.rotateRight(distance);
         service.stop();
     }
 }

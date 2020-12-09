@@ -7,7 +7,7 @@ import com.poko.pi.car.service.QRCodeDecoderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +24,7 @@ public class ImageController {
     @Autowired
     private QRCodeDecoderService decoderService;
 
-    @PostMapping(path = "/decodeImage")
+    @GetMapping(path = "/decodeImage")
     public void decodeImage() {
         byte[] bytes = imageService.takePicture();
         LOGGER.info("Image taken to bytearray: {}, length: {}", bytes.toString(), bytes.length);
@@ -32,7 +32,7 @@ public class ImageController {
         LOGGER.info(result.toString());
     }
 
-    @PostMapping(path = "/decodeWithImg")
+    @GetMapping(path = "/decodeWithImg")
     public void decodeWithImg() {
         byte[] bytes = imgService.takeBufferedStill();
         LOGGER.info("Image taken to bytearray: {}, length: {}", bytes.toString(), bytes.length);
