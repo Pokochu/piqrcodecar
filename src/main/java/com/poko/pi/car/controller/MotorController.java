@@ -31,14 +31,14 @@ public class MotorController {
     }
 
     @PostMapping("/rotateLeft")
-    public void rotateLeft(@RequestParam long distance) throws InterruptedException {
-        service.rotateLeft(distance);
+    public void rotateLeft(@RequestParam long angle) throws InterruptedException {
+        service.rotateLeft(angle);
         service.stop();
     }
 
     @PostMapping("/rotateRight")
-    public void rotateRight(@RequestParam long distance) throws InterruptedException {
-        service.rotateRight(distance);
+    public void rotateRight(@RequestParam long angle) throws InterruptedException {
+        service.rotateRight(angle);
         service.stop();
     }
 }

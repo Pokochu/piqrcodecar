@@ -51,18 +51,18 @@ public class MotorService {
         Thread.sleep(distance);
     }
 
-    public void rotateRight(long distance) throws InterruptedException {
+    public void rotateRight(long angle) throws InterruptedException {
         gpioController.setState(LOW, pin17, pin23);
         gpioController.setState(HIGH, pin22, pin24);
         setPwm();
-        Thread.sleep(distance);
+        Thread.sleep(angle);
     }
 
-    public void rotateLeft(long distance) throws InterruptedException {
+    public void rotateLeft(long angle) throws InterruptedException {
         gpioController.setState(LOW, pin22, pin24);
         gpioController.setState(HIGH, pin17, pin23);
         setPwm();
-        Thread.sleep(distance);
+        Thread.sleep(angle);
     }
 
     public void stop() {
